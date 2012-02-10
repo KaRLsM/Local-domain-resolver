@@ -1,0 +1,21 @@
+<html>
+  <script>
+chrome.webNavigation.onBeforeNavigate.addListener(function(details){
+	if ( 0 !== details.frameId )
+	{
+		return false;
+	}
+	var result = details.url.match(/&q=(.*\.\w+)$/)
+	if ( null === result )
+	{
+		return false;
+	}
+	
+	if ( undefined !== result[1] )
+	{
+		chrome.tabs.update(details.tabId, {url:'http://'+result[1]});
+	}
+});
+
+  </script>
+</html>

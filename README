@@ -1,0 +1,8 @@
+Forces to resolve a local domain instead of searching for results in google.
+
+How many times you've found that you type in your new tab something like... "subdomain.mylocaldomain.atwork" press enter... and you go straight to the google search results!
+
+With this small extension you can fix this behaviour and it will try to resolve that domain you just typed.
+
+ChangeLog
+Version 1.0 - Initial release.
