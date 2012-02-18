@@ -1,21 +1,24 @@
 <html>
   <script>
-chrome.webNavigation.onBeforeNavigate.addListener(function(details){
-	if ( 0 !== details.frameId )
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
+	if ( undefined === changeInfo.url )
 	{
 		return false;
 	}
-	var result = details.url.match(/&q=(.*\.\w+)$/)
+	var result = changeInfo.url.match(/www.google.+&q=([\w\.]+\.\w+)/);
 	if ( null === result )
 	{
 		return false;
 	}
+	var result_length = changeInfo.url.match(/www.google.+&q=([^&]+)/);
 	
-	if ( undefined !== result[1] )
+	if ( undefined !== result[1] && undefined !== result_length[1] )
 	{
-		chrome.tabs.update(details.tabId, {url:'http://'+result[1]});
+		if ( result_length[1].length === result[1].length )
+		{
+			chrome.tabs.update(tabId, {url:'http://'+result[1]});
+		}
 	}
 });
-
   </script>
 </html>
