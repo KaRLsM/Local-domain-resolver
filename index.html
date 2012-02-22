@@ -5,7 +5,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
 	{
 		return false;
 	}
-	var result = changeInfo.url.match(/www.google.+&q=([\w\.]+\.\w+)/);
+	var result = changeInfo.url.match(/www.google.+&q=([\w-\.]+\.[\w-]+)/);
 	if ( null === result )
 	{
 		return false;

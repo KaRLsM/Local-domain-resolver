@@ -1,6 +1,6 @@
 {
   "name": "Local-domain resolver",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Forces to resolve a local domain instead of searching for results in google.",
   "background_page": "index.html",
   "icons": { "16": "icon16.png",
