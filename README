@@ -5,4 +5,7 @@ How many times you've found that you type in your new tab something like... "sub
 With this small extension you can fix this behaviour and it will try to resolve that domain you just typed.
 
 ChangeLog
-Version 1.0 - Initial release.
+v1.3 - Urls with directory path are now supported
+v1.2 - Domains with "-" in the domain name weren't resolving properly
+v1.1 - Sometimes the dns resolution was not working
+v1.0 - Initial release
